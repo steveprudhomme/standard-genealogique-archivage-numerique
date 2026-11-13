@@ -1,0 +1,10 @@
+standard: SGAN
+version: 0.1.0
+id: P000006
+code: 1-D1
+alias_codes: []
+nom_affichage: Exemple Florence
+autres_noms: []
+statut_vital: inconnu
+notes: Personnage entièrement fictif, créé pour les tests SGAN.
+revision: '2026-11-13'

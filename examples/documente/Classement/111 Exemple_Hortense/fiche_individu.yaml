@@ -1,0 +1,11 @@
+standard: SGAN
+version: 0.1.0
+id: P000008
+code: '111'
+alias_codes:
+- '121'
+nom_affichage: Exemple Hortense
+autres_noms: []
+statut_vital: inconnu
+notes: Personnage entièrement fictif, créé pour les tests SGAN.
+revision: '2026-11-13'

@@ -1,0 +1,205 @@
+{
+  "standard": "SGAN",
+  "version": "0.1.0",
+  "statut": "Draft",
+  "profil": "socle",
+  "collection_id": "c70ddc0b-cfd4-44f0-9c7e-000000000001",
+  "titre": "Collection entièrement fictive — documente",
+  "resume": "Jeu synthétique de démonstration ; aucune personne ni archive réelle. Les emplacements 11 et 12 désignent les parents choisis pour l’ascendance.",
+  "donnees_synthetiques": true,
+  "personne_reference": "P000001",
+  "individus": [
+    {
+      "id": "P000001",
+      "dossier": "1 Exemple_Aline"
+    },
+    {
+      "id": "P000002",
+      "dossier": "11 Exemple_Basile"
+    },
+    {
+      "id": "P000003",
+      "dossier": "12 Exemple_Camille"
+    },
+    {
+      "id": "P000004",
+      "dossier": "11-U2-C1 Exemple_Dominique"
+    },
+    {
+      "id": "P000005",
+      "dossier": "11-U2-E1 Exemple_Emile"
+    },
+    {
+      "id": "P000006",
+      "dossier": "1-D1 Exemple_Florence"
+    },
+    {
+      "id": "P000007",
+      "dossier": "1-U1-C1 Exemple_Gael"
+    },
+    {
+      "id": "P000008",
+      "dossier": "111 Exemple_Hortense"
+    },
+    {
+      "id": "P000009",
+      "dossier": "X000001 Exemple_Indigo"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S000001",
+      "titre": "Registre simulé A",
+      "depot": "Dépôt fictif SGAN",
+      "cote": "SIM-A-1",
+      "provenance": "Texte inventé pour cet exemple."
+    },
+    {
+      "id": "S000002",
+      "titre": "Note simulée B",
+      "depot": null,
+      "cote": null,
+      "provenance": "Source fictive contradictoire, sans fichier associé."
+    }
+  ],
+  "documents": [
+    {
+      "id": "D000001",
+      "titre": "Simulation de notice familiale",
+      "chemin": "_archives/acte-fictif.txt",
+      "sha256": "deeebb065cf822855978600243aa5d507da600bfe96044e68c10fa83b9dbd6b7",
+      "source_id": "S000001",
+      "personnes": [
+        "P000001",
+        "P000002",
+        "P000003"
+      ],
+      "provenance": "Création synthétique pour le dépôt SGAN.",
+      "droits": "MIT — contributeurs SGAN",
+      "acces": "public"
+    }
+  ],
+  "relations": [
+    {
+      "id": "R000001",
+      "de": "P000002",
+      "vers": "P000001",
+      "type": "parent_biologique",
+      "assertions": [
+        "A000001"
+      ]
+    },
+    {
+      "id": "R000002",
+      "de": "P000003",
+      "vers": "P000001",
+      "type": "parent_biologique",
+      "assertions": []
+    },
+    {
+      "id": "R000003",
+      "de": "P000002",
+      "vers": "P000003",
+      "type": "partenaire",
+      "assertions": []
+    },
+    {
+      "id": "R000004",
+      "de": "P000002",
+      "vers": "P000004",
+      "type": "partenaire",
+      "assertions": []
+    },
+    {
+      "id": "R000005",
+      "de": "P000002",
+      "vers": "P000005",
+      "type": "parent_biologique",
+      "assertions": []
+    },
+    {
+      "id": "R000006",
+      "de": "P000004",
+      "vers": "P000005",
+      "type": "parent_biologique",
+      "assertions": []
+    },
+    {
+      "id": "R000007",
+      "de": "P000001",
+      "vers": "P000006",
+      "type": "parent_adoptif",
+      "assertions": []
+    },
+    {
+      "id": "R000008",
+      "de": "P000007",
+      "vers": "P000006",
+      "type": "parent_adoptif",
+      "assertions": []
+    },
+    {
+      "id": "R000009",
+      "de": "P000001",
+      "vers": "P000007",
+      "type": "partenaire",
+      "assertions": []
+    },
+    {
+      "id": "R000010",
+      "de": "P000008",
+      "vers": "P000002",
+      "type": "parent_biologique",
+      "assertions": []
+    },
+    {
+      "id": "R000011",
+      "de": "P000008",
+      "vers": "P000003",
+      "type": "parent_biologique",
+      "assertions": []
+    }
+  ],
+  "assertions": [
+    {
+      "id": "A000001",
+      "sujets": [
+        "P000001",
+        "P000002"
+      ],
+      "predicat": "filiation",
+      "valeur": "Basile est parent d’Aline dans la simulation.",
+      "statut": "etayee",
+      "analyse": "Le registre fictif énonce ce lien ; cet exemple illustre la citation, sans preuve réelle.",
+      "citations": [
+        {
+          "source_id": "S000001",
+          "localisation": "ligne 2",
+          "apport": "soutient"
+        }
+      ]
+    },
+    {
+      "id": "A000002",
+      "sujets": [
+        "P000001"
+      ],
+      "predicat": "naissance",
+      "valeur": "vers 1900",
+      "statut": "contestee",
+      "analyse": "Les deux sources fictives divergent ; la date n’est pas résolue.",
+      "citations": [
+        {
+          "source_id": "S000001",
+          "localisation": "ligne 3",
+          "apport": "soutient"
+        },
+        {
+          "source_id": "S000002",
+          "localisation": "note unique : 1901",
+          "apport": "contredit"
+        }
+      ]
+    }
+  ]
+}

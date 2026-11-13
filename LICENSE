@@ -1,0 +1,23 @@
+SGAN — Répartition des licences
+Copyright (c) 2026 les contributeurs SGAN
+
+1. CC BY 4.0 (Creative Commons Attribution 4.0 International)
+   Tous les textes Markdown, notamment README.md, CONTRIBUTING.md,
+   CODE_OF_CONDUCT.md, SECURITY.md, GOVERNANCE.md, CHANGELOG.md, ROADMAP.md,
+   docs/, spec/ et rfcs/, sauf les exceptions du point 2.
+   Texte intégral : LICENSES/CC-BY-4.0.txt
+   https://creativecommons.org/licenses/by/4.0/
+
+2. MIT
+   tools/, tests/, schemas/ (y compris leurs README), examples/ (tous fichiers),
+   .github/, requirements.txt, .gitignore, .gitattributes et VERSION.
+   Texte intégral : LICENSES/MIT.txt
+
+Les textes des licences conservent leurs propres conditions.
+Les contenus tiers explicitement identifiés conservent leurs licences respectives.
+Aucune licence n’est accordée sur des archives externes simplement référencées.
+
+Attribution suggérée pour la documentation :
+« SGAN, contributeurs SGAN, Draft 0.1.0, CC BY 4.0,
+https://github.com/steveprudhomme/standard-genealogique-archivage-numerique ».
+Indiquer les modifications apportées lors d’une adaptation.

@@ -1,0 +1,57 @@
+type: object
+properties:
+  standard:
+    const: SGAN
+  version:
+    const: 0.1.0
+  id:
+    type: string
+    pattern: ^P(?!000000)[0-9]{6}$
+  code:
+    type: string
+    pattern: ^(1[12]*|X(?!000000)[0-9]{6})(-D[1-9][0-9]*|-U[1-9][0-9]*-[EC][1-9][0-9]*)*$
+  alias_codes:
+    type: array
+    items:
+      type: string
+      pattern: ^(1[12]*|X(?!000000)[0-9]{6})(-D[1-9][0-9]*|-U[1-9][0-9]*-[EC][1-9][0-9]*)*$
+    minItems: 0
+    uniqueItems: true
+  nom_affichage:
+    type: string
+    minLength: 1
+    pattern: \S
+  autres_noms:
+    type: array
+    items:
+      type: string
+      minLength: 1
+      pattern: \S
+    minItems: 0
+    uniqueItems: true
+  statut_vital:
+    enum:
+    - vivant
+    - decede
+    - inconnu
+  notes:
+    type: string
+  revision:
+    type: string
+    format: date
+required:
+- standard
+- version
+- id
+- code
+- alias_codes
+- nom_affichage
+- autres_noms
+- statut_vital
+- notes
+- revision
+additionalProperties: false
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.1.0-draft/schemas/0.1.0/individu.schema.json
+title: SGAN individu — Draft 0.1.0 non officiel
+$comment: 'SPDX-License-Identifier: MIT'

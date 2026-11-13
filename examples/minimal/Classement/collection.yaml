@@ -1,0 +1,17 @@
+standard: SGAN
+version: 0.1.0
+statut: Draft
+profil: socle
+collection_id: c70ddc0b-cfd4-44f0-9c7e-000000000002
+titre: Collection entièrement fictive — minimal
+resume: Jeu synthétique de démonstration ; aucune personne ni archive réelle. Les
+  emplacements 11 et 12 désignent les parents choisis pour l’ascendance.
+donnees_synthetiques: true
+personne_reference: P000001
+individus:
+- id: P000001
+  dossier: 1 Personne_inconnue
+sources: []
+documents: []
+relations: []
+assertions: []

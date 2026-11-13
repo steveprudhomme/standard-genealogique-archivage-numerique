@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Sécurité et confidentialité
+    url: https://github.com/steveprudhomme/standard-genealogique-archivage-numerique/blob/main/SECURITY.md
+    about: Ne pas publier de vulnérabilité exploitable ou de données privées dans une issue.

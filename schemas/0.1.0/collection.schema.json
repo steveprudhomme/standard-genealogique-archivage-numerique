@@ -1,0 +1,376 @@
+{
+  "type": "object",
+  "properties": {
+    "standard": {
+      "const": "SGAN"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "statut": {
+      "const": "Draft"
+    },
+    "profil": {
+      "const": "socle"
+    },
+    "collection_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "titre": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "resume": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "donnees_synthetiques": {
+      "type": "boolean"
+    },
+    "personne_reference": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^P(?!000000)[0-9]{6}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "individus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^P(?!000000)[0-9]{6}$"
+          },
+          "dossier": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "dossier"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^S(?!000000)[0-9]{6}$"
+          },
+          "titre": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "depot": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "cote": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "titre",
+          "depot",
+          "cote",
+          "provenance"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^D(?!000000)[0-9]{6}$"
+          },
+          "titre": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "chemin": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "source_id": {
+            "type": "string",
+            "pattern": "^S(?!000000)[0-9]{6}$"
+          },
+          "personnes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^P(?!000000)[0-9]{6}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "provenance": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "droits": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "acces": {
+            "enum": [
+              "public",
+              "restreint",
+              "prive"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "titre",
+          "chemin",
+          "sha256",
+          "source_id",
+          "personnes",
+          "provenance",
+          "droits",
+          "acces"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^R(?!000000)[0-9]{6}$"
+          },
+          "de": {
+            "type": "string",
+            "pattern": "^P(?!000000)[0-9]{6}$"
+          },
+          "vers": {
+            "type": "string",
+            "pattern": "^P(?!000000)[0-9]{6}$"
+          },
+          "type": {
+            "enum": [
+              "parent_biologique",
+              "parent_adoptif",
+              "parent_social",
+              "parent_indetermine",
+              "partenaire"
+            ]
+          },
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^A(?!000000)[0-9]{6}$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "de",
+          "vers",
+          "type",
+          "assertions"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^A(?!000000)[0-9]{6}$"
+          },
+          "sujets": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^P(?!000000)[0-9]{6}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "predicat": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "valeur": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "statut": {
+            "enum": [
+              "hypothese",
+              "etayee",
+              "contestee",
+              "refutee"
+            ]
+          },
+          "analyse": {
+            "type": "string"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string",
+                  "pattern": "^S(?!000000)[0-9]{6}$"
+                },
+                "localisation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "apport": {
+                  "enum": [
+                    "soutient",
+                    "contredit",
+                    "contexte"
+                  ]
+                }
+              },
+              "required": [
+                "source_id",
+                "localisation",
+                "apport"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "sujets",
+          "predicat",
+          "valeur",
+          "statut",
+          "analyse",
+          "citations"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "statut": {
+                  "enum": [
+                    "etayee",
+                    "contestee"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "analyse": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "citations": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "standard",
+    "version",
+    "statut",
+    "profil",
+    "collection_id",
+    "titre",
+    "resume",
+    "donnees_synthetiques",
+    "personne_reference",
+    "individus",
+    "sources",
+    "documents",
+    "relations",
+    "assertions"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.1.0-draft/schemas/0.1.0/collection.schema.json",
+  "title": "SGAN collection — Draft 0.1.0 non officiel",
+  "$comment": "SPDX-License-Identifier: MIT"
+}

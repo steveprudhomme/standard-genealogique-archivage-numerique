@@ -1,0 +1,20 @@
+name: Proposition ou question ouverte
+description: Préparer une RFC ou discuter une décision.
+title: '[Proposition] '
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Besoin et cas d’usage fictif
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposition, alternatives et effet sur les données existantes
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Règles, RFC ou questions ouvertes concernées

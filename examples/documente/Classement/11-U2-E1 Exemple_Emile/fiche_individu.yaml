@@ -1,0 +1,10 @@
+standard: SGAN
+version: 0.1.0
+id: P000005
+code: 11-U2-E1
+alias_codes: []
+nom_affichage: Exemple Emile
+autres_noms: []
+statut_vital: inconnu
+notes: Personnage entièrement fictif, créé pour les tests SGAN.
+revision: '2026-11-13'
