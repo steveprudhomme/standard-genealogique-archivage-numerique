@@ -1,25 +1,29 @@
 # Feuille de route
 
-## 0.1 — Base expérimentale
+## Draft 0.3.1 — Refléter le prototype courant
 
-- [x] Publier la spécification et les schémas de base.
-- [x] Livrer exemples fictifs et validation reproductible.
-- [x] Définir gouvernance, licences et processus RFC.
-- [ ] Recueillir des retours sur l’usage dans l’Explorateur Windows.
+- [x] Trois fichiers et dix catégories fixes par personne, dossiers individuels à plat.
+- [x] Fiches riches, inventaires à onze colonnes et quatre index globaux.
+- [x] Numérotation du prototype et références GEDCOM clairement provisoires.
+- [x] Schémas, lecteur ZIP sans extraction, contrôles de concordance et exemples fictifs.
+- [x] Création de ZIP conservant les dossiers vides et tests de régression.
+- [x] Conservation de l’édition historique 0.1.0.
+- [ ] Consultation de la RFC 0002 et retours sur le profil courant.
 
-## 0.2 — Interopérabilité à éprouver
+## Prochaine édition mineure — Stabiliser sans perdre les données
 
-- [ ] Arbitrer la notation compacte, les partenaires et la numérotation des unions.
-- [ ] Tester un aller-retour sur une base RootsMagic entièrement fictive ; consigner version et pertes.
-- [ ] Développer un importateur GEDCOM avec rapport des données non converties.
-- [ ] Définir les migrations, fusions d’identités et redirections de dossiers.
-- [ ] Étudier l’internationalisation des noms et des calendriers.
+- [ ] Retrouver ou spécifier l’algorithme de génération des codes, notamment ~.
+- [ ] Définir identifiants durables, registre des chemins et migration contrôlée.
+- [ ] Éprouver adoption, filiations concurrentes, cycles et changements de personne racine.
+- [ ] Développer un véritable importateur GEDCOM avec rapport des éléments non repris.
+- [ ] Tester un aller-retour RootsMagic sur une base entièrement fictive.
+- [ ] Définir sources, citations, assertions, provenance et droits sous une forme structurée.
 
-## Vers 1.0 — Stabilisation, sans date promise
+## Vers 1.0 — Sans date promise
 
-- [ ] Réaliser des essais indépendants et examiner les RFC ouvertes.
-- [ ] Définir les profils documenté et archivistique et leur validation complète.
-- [ ] Couvrir les fonds, séries, copies dérivées et historiques de conservation structurés.
-- [ ] Fixer les garanties de compatibilité et la gouvernance collégiale.
+- [ ] Expérimentations indépendantes et examen des RFC.
+- [ ] Profils documentaires avancés et conservation des fonds.
+- [ ] Migrations vérifiées et garanties de compatibilité.
+- [ ] Gouvernance collégiale et dispositif d’appel indépendant.
 
-Une case cochée signifie un livrable présent, pas une homologation.
+Une case cochée indique un livrable présent, pas une homologation.

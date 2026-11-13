@@ -1,5 +1,13 @@
 # Exemples entièrement synthétiques
 
+La référence courante est [v0.3.1/Paquet](v0.3.1/Paquet) : dix personnes inventées,
+six familles, quatre index, un document partagé et dix catégories par personne.
+Les `.gitkeep` conservent les catégories vides dans Git. Le programme
+`tools/package_v031.py` crée un ZIP contenant les répertoires sans ces marqueurs.
+Le générateur `tools/generate_example_v031.py` reproduit seulement cet exemple.
+
+## Exemples historiques 0.1.0
+
 Ces jeux sont inventés pour le projet, sans reprise d’un arbre ou d’une personne
 réelle. Les prénoms usuels ne désignent personne. Aucun GEDCOM privé n’est inclus.
 

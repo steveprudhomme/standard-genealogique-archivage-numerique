@@ -1,0 +1,56 @@
+type: object
+properties:
+  document_id:
+    type: string
+    pattern: \S
+  categorie:
+    enum:
+    - 01_Etat_civil
+    - 02_Famille_et_relations
+    - 03_Residences_et_recensements
+    - 04_Etudes_et_professions
+    - 05_Service_militaire
+    - 06_Photographies
+    - 07_Correspondance
+    - 08_Biens_et_patrimoine
+    - 09_Recherches_genealogiques
+    - 10_Autres_documents
+  titre:
+    type: string
+    pattern: \S
+  date:
+    type: string
+  chemin_relatif:
+    type: string
+  provenance:
+    type: string
+    pattern: \S
+  cote:
+    type: string
+  url_source:
+    type: string
+  relation:
+    type: string
+    pattern: \S
+  sha256:
+    type: string
+    pattern: ^([a-f0-9]{64})?$
+  notes:
+    type: string
+required:
+- document_id
+- categorie
+- titre
+- date
+- chemin_relatif
+- provenance
+- cote
+- url_source
+- relation
+- sha256
+- notes
+additionalProperties: false
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.3.1-draft/schemas/0.3.1/inventaire-ligne.schema.json
+title: SGAN Draft 0.3.1 — inventaire-ligne
+$comment: 'SPDX-License-Identifier: MIT'

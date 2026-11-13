@@ -11,4 +11,5 @@ local-data/
 *.rmgc
 *.rmgb
 *.ged
+*.zip
 !examples/**/*.ged

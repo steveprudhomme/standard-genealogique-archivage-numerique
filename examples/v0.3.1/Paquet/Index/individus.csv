@@ -1,0 +1,11 @@
+code_genealogique,id_gedcom,nom,dossier,methode,naissance_date_source,deces_date_source,parents_gedcom,partenaires_gedcom,enfants_gedcom
+1,I1,Exemple Aline,1 Exemple_Aline,reference,ABT 1900,,I2;I3,I7,I6
+11,I2,Exemple Basile,11 Exemple_Basile,ascendance,,,I10,I3;I4,I1;I5
+12,I3,Exemple Camille,12 Exemple_Camille,ascendance,,,I10,I2,I1
+11-C02,I4,Exemple Dominique,11-C02 Exemple_Dominique,partenaire,,,,I2,I5
+11-U02-E01,I5,Exemple Emile,11-U02-E01 Exemple_Emile,branche_familiale,,,I2;I4,,
+1-D01,I6,Exemple Florence,1-D01 Exemple_Florence,descendance,,,I1;I7,,
+1-C01,I7,Exemple Gael,1-C01 Exemple_Gael,partenaire,,,I9,I1,I6
+X000001,I8,Exemple Indigo,X000001 Exemple_Indigo,non_rattache,,,,,
+1-C01-P1,I9,Exemple Hector,1-C01-P1 Exemple_Hector,parent_hors_ascendance,,,,,I7
+112~2,I10,Exemple Iris,112~2 Exemple_Iris,ascendance,,,,,I2;I3

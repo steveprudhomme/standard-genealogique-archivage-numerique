@@ -1,0 +1,65 @@
+{
+  "standard": "SGAN",
+  "version": "0.3.1-draft",
+  "statut": "prototype_non_officiel",
+  "code_genealogique": "11",
+  "identifiant_permanent_provisoire": "GEDCOM:I2",
+  "identite": {
+    "nom_complet": "Exemple Basile",
+    "nom": "Exemple",
+    "prenoms": "Basile",
+    "sexe_gedcom": null
+  },
+  "evenements": {
+    "naissance": null,
+    "deces": null
+  },
+  "relations": {
+    "parents": [
+      {
+        "code": "112~2",
+        "gedcom_id": "I10",
+        "nom": "Exemple Iris"
+      }
+    ],
+    "partenaires": [
+      {
+        "code": "12",
+        "gedcom_id": "I3",
+        "nom": "Exemple Camille"
+      },
+      {
+        "code": "11-C02",
+        "gedcom_id": "I4",
+        "nom": "Exemple Dominique"
+      }
+    ],
+    "enfants": [
+      {
+        "code": "1",
+        "gedcom_id": "I1",
+        "nom": "Exemple Aline"
+      },
+      {
+        "code": "11-U02-E01",
+        "gedcom_id": "I5",
+        "nom": "Exemple Emile"
+      }
+    ]
+  },
+  "familles_gedcom": {
+    "enfant_de": [
+      "F5"
+    ],
+    "partenaire_dans": [
+      "F1",
+      "F2"
+    ]
+  },
+  "tracabilite": {
+    "fichier_source": "exemple-fictif.ged",
+    "identifiant_gedcom": "I2",
+    "methode_numerotation": "ascendance",
+    "note": "Jeu entièrement synthétique. Codes provisoires, non déduits de données privées."
+  }
+}

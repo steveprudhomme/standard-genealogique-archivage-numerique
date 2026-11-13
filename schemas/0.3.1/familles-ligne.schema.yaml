@@ -1,0 +1,24 @@
+type: object
+properties:
+  famille_gedcom:
+    type: string
+    pattern: ^F[0-9]+$
+  pere_gedcom:
+    type: string
+  mere_gedcom:
+    type: string
+  enfants_gedcom:
+    type: string
+  date_mariage_source:
+    type: string
+required:
+- famille_gedcom
+- pere_gedcom
+- mere_gedcom
+- enfants_gedcom
+- date_mariage_source
+additionalProperties: false
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.3.1-draft/schemas/0.3.1/familles-ligne.schema.json
+title: SGAN Draft 0.3.1 — familles-ligne
+$comment: 'SPDX-License-Identifier: MIT'

@@ -2,7 +2,23 @@
 
 ## À venir
 
-Aucune modification publiée après la base initiale.
+Aucune modification publiée après la référence courante.
+
+## 0.3.1 — 2026-11-13 — Draft non officiel
+
+- Alignement avec le prototype à dix catégories fixes par personne, y compris vides.
+- Fiches avec identité, événements, relations, familles et traçabilité GEDCOM.
+- Quatre index CSV au niveau du paquet et inventaire documentaire à onze colonnes.
+- Rangs sur deux chiffres, partenaires et parents indirects ; conservation des codes ~.
+- Identifiants GEDCOM explicitement provisoires ; suppression de l’exigence d’un manifeste central.
+- Schémas 0.3.1, lecteur ZIP en lecture seule, contrôles de concordance et outil ZIP conservant les dossiers vides.
+- Exemple entièrement fictif, tests supplémentaires, compatibilité de lecture signalée pour les fiches 0.3.0-draft.
+- Ancienne édition 0.1.0 et ses tests conservés ; aucune donnée privée publiée.
+
+Le saut à 0.3.1 aligne la référence sur le prototype existant ; aucune publication
+GitHub 0.2.0 ou 0.3.0 n’est prétendue. Cette révision du prototype comporte des
+changements structurels ; « .1 » reprend son nom historique, sans promettre une
+compatibilité de correctif avec tous les paquets antérieurs.
 
 ## 0.1.0 — 2026-11-13 — Draft non officiel
 

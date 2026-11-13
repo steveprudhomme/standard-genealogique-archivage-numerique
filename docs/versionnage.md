@@ -1,19 +1,27 @@
 # Versions et publication
 
-Les numéros suivent `MAJEUR.MINEUR.CORRECTIF`. Pendant `0.x`, un changement
-incompatible nécessite une nouvelle version mineure et des instructions de migration.
-Un correctif est éditorial ou corrige un outil sans modifier le contrat accepté.
-Une modification des règles qui invalide une collection existante n’est pas éditoriale.
-À partir de 1.0, une rupture exige une version majeure.
+La référence courante est **Draft 0.3.1**, tag `v0.3.1-draft`. Les fiches déclarent
+`version: "0.3.1-draft"` et `statut: "prototype_non_officiel"`. Le fichier VERSION
+du projet contient `0.3.1` ; le statut reste indiqué dans le tag et la documentation.
 
-Le statut documentaire (`Draft`, puis éventuellement `Candidate` et `Stable`) est
-distinct du numéro. « Stable » signifie stable dans le projet, jamais homologué.
-Cette édition porte `0.1.0`, `Draft`, et le tag Git `v0.1.0-draft`.
-Les données déclarent exactement la version des schémas qu’elles utilisent.
+La version 0.1.0 reste publiée sans modification de son tag. Le saut à 0.3.1
+reprend le nom du prototype de classement pour faciliter le rapprochement ;
+aucune publication GitHub 0.2.0 ou 0.3.0 n’est prétendue. Le passage du prototype
+0.3.0 au profil à dix dossiers change les contraintes : le chiffre de correctif
+est ici hérité du prototype, sans garantie de compatibilité sémantique.
 
-Pour publier : clore les décisions nécessaires, mettre à jour VERSION et CHANGELOG,
-vérifier les schémas et tests, relire les exemples pour la confidentialité,
-committer, attendre la réussite CI, créer un tag annoté et une préversion GitHub.
-Une édition publiée ne doit pas être réécrite sous le même tag ; publier un correctif.
-Les schémas sont versionnés dans `schemas/<version>/`, la spécification dans
-`spec/<version>/`. Les outils courants n’acceptent que 0.1.0 ; pas de migration implicite.
+Pour les évolutions futures, suivre MAJEUR.MINEUR.CORRECTIF : pendant 0.x,
+une modification incompatible exige une nouvelle version mineure et une migration.
+Un correctif corrige les outils ou le texte sans modifier le contrat accepté.
+Après 1.0, une rupture exige une version majeure. Une erreur de règle qui invalide
+des collections existantes n’est pas une simple correction éditoriale.
+
+Le statut documentaire (Draft, éventuellement Candidate et Stable) ne vaut
+jamais homologation. Une publication reste une édition de travail tant que sa
+consultation n’est pas achevée ; voir la gouvernance et les RFC.
+
+Pour publier : actualiser VERSION et CHANGELOG, vérifier schémas, exemples et
+confidentialité, exécuter la CI, créer un tag annoté et une préversion GitHub.
+Ne pas déplacer un tag publié. Les textes et schémas vivent dans leurs répertoires
+versionnés. Les migrations doivent préserver les données et expliquer les pertes.
+Un nom de fichier ZIP ou de dossier externe ne suffit jamais à déterminer un format.

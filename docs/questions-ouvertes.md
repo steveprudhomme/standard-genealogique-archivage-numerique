@@ -1,17 +1,19 @@
-# Questions ouvertes
+# Questions ouvertes — référence 0.3.1
 
-| Sujet | Position provisoire 0.1.0 | Travail attendu |
+| Sujet | État actuel | Travail attendu |
 |---|---|---|
-| Notation compacte | Syntaxe longue avec rangs sans zéro initial | Comparer lisibilité, tri et conversion des anciens codes |
-| Codes et parentés | Syntaxe contrôlée, cohérence généalogique examinée manuellement | Définir un algorithme reproductible et un registre des unités U |
-| Implexes et changements de sujet | Une identité, code principal et alias | Définir le changement de racine sans perte de références |
-| Fusions de notices | Pas de réutilisation d’identifiant | Schéma de redirections et historique des décisions |
-| Familles complexes | Relations typées ; deux emplacements d’ascendance sélectionnés | Représenter explicitement plusieurs parents et temporalités |
-| Adoption et cycles sociaux | Tous les liens parentaux sont actuellement acycliques | Examiner les cas où ce contrôle serait trop restrictif |
-| Archives | Provenance et droits textuels | Fonds, séries, dérivations, historique et profils avancés |
-| Preuve | Assertions et citations motivées | Vocabulaire partagé et exemples de conflits |
-| Dates | Texte conservant l’incertitude | Calendriers, intervalles et dates GEDCOM structurées |
-| Échanges | Correspondances documentées | Import/export implémenté, tests réels synthétiques RootsMagic |
-| Gouvernance | Mainteneur unique | Comité, recours indépendant, canal privé dédié |
+| Dix catégories | Fixes, obligatoires, même vides ; sans 00_Identification | Retours d’usage et organisation interne |
+| Identifiants | GEDCOM:Ix propre à un export | UUID durables et table de correspondance |
+| Codes | Syntaxe du prototype conservée | Générateur reproductible et absence de renumérotation après ajout |
+| Marqueur ~ | Jeton opaque conservé avec avertissement | Établir son origine et une migration non ambiguë |
+| Implexes | Un dossier et index des chemins alternatifs | Changement de sujet et choix stable du chemin principal |
+| Familles | Liens parents/enfants/partenaires exportés | Adoption, filiations concurrentes, relations sociales et temporalité |
+| Dates | Valeurs GEDCOM brutes conservées | Calendriers, intervalles et représentation normalisée complémentaire |
+| Documents | Inventaire à onze colonnes ; chemins relatifs au paquet | Éprouver les règles sur des jeux documentaires synthétiques plus riches |
+| Archives | Une copie maîtresse, respect des fonds | Dérivés, historique de conservation et droits structurés |
+| Preuves | Notes, sources, inventaires et raisonnement humain | Profil d’assertions optionnel inspiré de la proposition 0.1.0 |
+| GEDCOM/RootsMagic | Paquet issu d’un export observé ; aucun convertisseur livré | Aller-retour synthétique reproductible avec rapport de pertes |
+| Gouvernance | Mainteneur unique, consultation ouverte | Comité et recours indépendant |
 
-Proposer une [RFC](../rfcs/README.md) en citant le sujet et les effets de migration.
+La notation compacte reste une alternative à discuter, pas le format du prototype.
+Proposer une [RFC](../rfcs/README.md) avec effets sur les données et migration.

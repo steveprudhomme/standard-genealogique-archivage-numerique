@@ -1,10 +1,26 @@
 # GEDCOM et RootsMagic
 
-**Draft 0.1.0 — conception d’interopérabilité, pas un convertisseur livré.**
+**Draft 0.3.1 — paquet d’export observé, pas un convertisseur livré.**
 Le validateur SGAN ne valide pas le contenu d’un GEDCOM. Aucun aller-retour
 RootsMagic n’a été exécuté pour cette édition.
 
-## Correspondances envisagées
+## Format effectivement repris en 0.3.1
+
+Le paquet conserve un GEDCOM sous `Sources/`, les IDs locaux `I…`/`F…`, les
+valeurs de date brutes et les références `GEDCOM:I…` provisoires. Les fiches
+décrivent les liens disponibles ; les index individus, familles et relations
+permettent de contrôler leur concordance. Le lecteur SGAN vérifie ces fichiers
+et la présence du GEDCOM, sans analyser ni réimporter celui-ci.
+
+Ce profil observé ne couvre pas toutes les structures GEDCOM : sources détaillées,
+citations, notes, médias, types de filiation ou extensions peuvent rester uniquement
+dans le fichier source. L’existence du paquet ne prouve donc pas une conversion
+complète ou sans perte. Le programme du générateur initial n’est pas livré ici.
+
+## Correspondances envisagées pour un futur profil durable
+
+Le tableau suivant reste une piste de conception issue de 0.1.0 ; les IDs `P`
+et le registre d’assertions qu’il mentionne ne sont pas exigés dans le paquet 0.3.1.
 
 | SGAN | GEDCOM | Limite |
 |---|---|---|

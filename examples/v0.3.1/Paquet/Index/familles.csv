@@ -1,0 +1,7 @@
+famille_gedcom,pere_gedcom,mere_gedcom,enfants_gedcom,date_mariage_source
+F1,I2,I3,I1,
+F2,I2,I4,I5,
+F3,I1,I7,I6,
+F4,I9,,I7,
+F5,,I10,I2,
+F6,,I10,I3,

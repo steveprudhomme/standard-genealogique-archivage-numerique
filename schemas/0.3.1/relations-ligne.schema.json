@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "personne_gedcom": {
+      "type": "string",
+      "pattern": "^I[0-9]+$"
+    },
+    "code_personne": {
+      "type": "string",
+      "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+    },
+    "type_relation": {
+      "enum": [
+        "parents",
+        "partenaires",
+        "enfants"
+      ]
+    },
+    "autre_personne_gedcom": {
+      "type": "string",
+      "pattern": "^I[0-9]+$"
+    },
+    "code_autre_personne": {
+      "type": "string",
+      "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+    }
+  },
+  "required": [
+    "personne_gedcom",
+    "code_personne",
+    "type_relation",
+    "autre_personne_gedcom",
+    "code_autre_personne"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.3.1-draft/schemas/0.3.1/relations-ligne.schema.json",
+  "title": "SGAN Draft 0.3.1 — relations-ligne",
+  "$comment": "SPDX-License-Identifier: MIT"
+}

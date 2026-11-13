@@ -1,0 +1,63 @@
+{
+  "standard": "SGAN",
+  "version": "0.3.1-draft",
+  "statut": "prototype_non_officiel",
+  "code_genealogique": "1",
+  "identifiant_permanent_provisoire": "GEDCOM:I1",
+  "identite": {
+    "nom_complet": "Exemple Aline",
+    "nom": "Exemple",
+    "prenoms": "Aline",
+    "sexe_gedcom": null
+  },
+  "evenements": {
+    "naissance": {
+      "date": "ABT 1900",
+      "place": null,
+      "value": null
+    },
+    "deces": null
+  },
+  "relations": {
+    "parents": [
+      {
+        "code": "11",
+        "gedcom_id": "I2",
+        "nom": "Exemple Basile"
+      },
+      {
+        "code": "12",
+        "gedcom_id": "I3",
+        "nom": "Exemple Camille"
+      }
+    ],
+    "partenaires": [
+      {
+        "code": "1-C01",
+        "gedcom_id": "I7",
+        "nom": "Exemple Gael"
+      }
+    ],
+    "enfants": [
+      {
+        "code": "1-D01",
+        "gedcom_id": "I6",
+        "nom": "Exemple Florence"
+      }
+    ]
+  },
+  "familles_gedcom": {
+    "enfant_de": [
+      "F1"
+    ],
+    "partenaire_dans": [
+      "F3"
+    ]
+  },
+  "tracabilite": {
+    "fichier_source": "exemple-fictif.ged",
+    "identifiant_gedcom": "I1",
+    "methode_numerotation": "reference",
+    "note": "Jeu entièrement synthétique. Codes provisoires, non déduits de données privées."
+  }
+}
