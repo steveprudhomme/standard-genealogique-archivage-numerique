@@ -1,6 +1,16 @@
 # Exemples entièrement synthétiques
 
-La référence courante est [v0.3.1/Paquet](v0.3.1/Paquet) : dix personnes inventées,
+La référence courante est [v0.4.0/Paquet](v0.4.0/Paquet) : deux personnes inventées,
+huit mires PNG techniques, vingt catégories et une image commune référencée dans
+deux inventaires. Les vignettes unies testent les noms et les empreintes ; aucune
+photographie de personne réelle n’est incluse. Les suffixes de transformation
+décrivent uniquement des scénarios de test.
+Génération avec `tools/generate_example_v040.py`, validation avec
+`tools/validate_v040.py`, création ZIP avec `tools/package_v040.py`.
+
+## Exemple historique 0.3.1
+
+Le [paquet v0.3.1](v0.3.1/Paquet) conserve dix personnes inventées,
 six familles, quatre index, un document partagé et dix catégories par personne.
 Les `.gitkeep` conservent les catégories vides dans Git. Le programme
 `tools/package_v031.py` crée un ZIP contenant les répertoires sans ces marqueurs.

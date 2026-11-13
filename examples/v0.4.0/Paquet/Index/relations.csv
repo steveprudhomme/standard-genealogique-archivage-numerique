@@ -1,0 +1,3 @@
+personne_gedcom,code_personne,type_relation,autre_personne_gedcom,code_autre_personne
+I1,1,parents,I2,11
+I2,11,enfants,I1,1

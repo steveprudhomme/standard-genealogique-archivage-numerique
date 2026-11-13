@@ -1,6 +1,6 @@
 # Sécurité et confidentialité
 
-La branche `main`, le profil courant Draft 0.3.1 et le lecteur historique 0.1.0 sont suivis à ce stade,
+La branche `main`, le profil courant Draft 0.4.0 et les lecteurs historiques 0.3.1/0.1.0 sont suivis à ce stade,
 sans engagement de délai. SGAN décrit des archives potentiellement sensibles.
 
 ## Signaler un problème

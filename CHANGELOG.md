@@ -4,6 +4,16 @@
 
 Aucune modification publiée après la référence courante.
 
+## 0.4.0 — 2026-11-13 — Draft non officiel
+
+- Convention photographique : date de prise de vue, description, document_id et variante facultative.
+- Dates exactes, partielles, approximatives, intervalles et absence de date ; contrôle des dates impossibles.
+- IDs D sur six chiffres, concordance avec les inventaires et photo commune référencée sans duplication.
+- Versions restaurées, colorisées, recadrées ou de consultation avec nouvel ID et lien derive_de.
+- Schémas JSON/YAML 0.4.0, validateur de dossiers/ZIP et guide de migration sans renommage automatique.
+- Exemple synthétique avec huit mires PNG ; tests de nommage, d’inventaire et de dérivation.
+- Contrôles historiques 0.1.0/0.3.1 conservés ; dix catégories et index inchangés.
+
 ## 0.3.1 — 2026-11-13 — Draft non officiel
 
 - Alignement avec le prototype à dix catégories fixes par personne, y compris vides.

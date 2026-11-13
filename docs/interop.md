@@ -1,8 +1,13 @@
 # GEDCOM et RootsMagic
 
-**Draft 0.3.1 — paquet d’export observé, pas un convertisseur livré.**
+**Profils 0.3.1 et 0.4.0 — paquet d’export observé, pas un convertisseur livré.**
 Le validateur SGAN ne valide pas le contenu d’un GEDCOM. Aucun aller-retour
 RootsMagic n’a été exécuté pour cette édition.
+
+Le nommage photographique 0.4.0 ne réécrit pas les chemins de médias présents dans
+un GEDCOM ou une base RootsMagic. Lors d’une migration réelle, ces références
+doivent être réconciliées explicitement ; la validation des inventaires SGAN
+ne garantit pas leur mise à jour dans un logiciel tiers.
 
 ## Format effectivement repris en 0.3.1
 

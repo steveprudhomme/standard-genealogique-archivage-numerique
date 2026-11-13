@@ -1,8 +1,12 @@
 # Versions et publication
 
-La référence courante est **Draft 0.3.1**, tag `v0.3.1-draft`. Les fiches déclarent
-`version: "0.3.1-draft"` et `statut: "prototype_non_officiel"`. Le fichier VERSION
-du projet contient `0.3.1` ; le statut reste indiqué dans le tag et la documentation.
+La référence courante est **Draft 0.4.0**, tag `v0.4.0-draft`. Les fiches déclarent
+`version: "0.4.0-draft"` et `statut: "prototype_non_officiel"`. Le fichier VERSION
+du projet contient `0.4.0` ; le statut reste indiqué dans le tag et la documentation.
+
+La contrainte de nommage photographique justifie une nouvelle édition mineure :
+certains noms acceptés en 0.3.1 deviennent non conformes. Les tags précédents
+restent inchangés ; voir la [migration 0.4.0](migration-0.4.0.md).
 
 La version 0.1.0 reste publiée sans modification de son tag. Le saut à 0.3.1
 reprend le nom du prototype de classement pour faciliter le rapprochement ;

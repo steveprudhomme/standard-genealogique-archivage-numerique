@@ -9,11 +9,11 @@ except ModuleNotFoundError:
     from validate_v031 import validate
 
 
-def package(source, output):
+def package(source, output, validator=validate):
     source, output = Path(source).resolve(), Path(output).resolve()
     if output.is_relative_to(source):
         raise ValueError("Le ZIP doit être créé hors du paquet source")
-    validate(source)
+    validator(source)
     # Mode x : un fichier existant n’est jamais écrasé.
     with zipfile.ZipFile(output, "x", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(source.rglob("*")):
@@ -22,7 +22,7 @@ def package(source, output):
                 archive.writestr(relative + "/", b"")
             elif path.name != ".gitkeep":
                 archive.write(path, relative)
-    return validate(output)
+    return validator(output)
 
 
 if __name__ == "__main__":

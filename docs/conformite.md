@@ -1,6 +1,33 @@
 # Vérifier un paquet SGAN
 
-## Profil courant 0.3.1
+## Profil courant 0.4.0
+
+```sh
+python tools/profile_v040.py --check
+python tools/validate_v040.py examples/v0.4.0/Paquet
+python tools/package_v040.py examples/v0.4.0/Paquet exemple-photos.zip
+python tools/validate_v040.py exemple-photos.zip
+```
+
+La structure à dix catégories et les contrôles de concordance décrits ci-dessous
+sont conservés, avec des fiches déclarant `0.4.0-draft`. S’y ajoutent :
+
+| Exigence | Vérification |
+|---|---|
+| PHOTO-01 | Date, description ASCII, ID sur six chiffres, variante et extension minuscules |
+| PHOTO-02 | Dates possibles et intervalles d’années ordonnés |
+| PHOTO-03 | Image inventoriée, ID identique au nom, un fichier par ID, références communes cohérentes |
+| PHOTO-04 | Source locale déclarée pour les dérivés, ID distinct et absence de cycle |
+| PHOTO-05 | Liste d’extensions couverte ; revue humaine du format réel et de la provenance |
+
+Les tests couvrent photos communes hors du dossier individuel, dates incertaines,
+copies restaurées/colorisées, ID divergent, source absente, cycle et fichier annexe.
+La syntaxe JSON Schema seule ne valide pas le calendrier ou les inventaires.
+Le lecteur n’identifie aucune personne et ne décode pas les pixels : l’adéquation
+du nom au contenu, les dates historiques, le nom d’origine et la cohérence de
+la date descriptive dans l’inventaire sont examinés humainement.
+
+## Base et lecteur historique 0.3.1
 
 ```sh
 python tools/profile_v031.py --check
@@ -31,7 +58,7 @@ affiche des nombres et avertissements ; les diagnostics de schéma masquent les 
 avec avertissement. La validation stricte exige `0.3.1-draft`.
 Les codes historiques `~` sont acceptés avec avertissement dans les deux modes.
 
-La CI répète les validations des éditions 0.1.0 et 0.3.1 et leurs tests sur
+La CI répète les validations des éditions 0.1.0, 0.3.1 et 0.4.0 et leurs tests sur
 Windows/Ubuntu avec Python 3.11/3.13. Les tests créent uniquement des copies
 temporaires fictives : catégorie absente, onzième catégorie, version héritée,
 date modifiée, référence manquante, index divergent, fichier altéré, ZIP sans

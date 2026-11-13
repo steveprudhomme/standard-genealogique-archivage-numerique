@@ -95,20 +95,21 @@ class Package:
 SCHEMAS = {}
 
 
-def check(data, name):
-    if name not in SCHEMAS:
-        schema = json.loads((ROOT / f"schemas/0.3.1/{name}.schema.json").read_text(encoding="utf-8"))
-        SCHEMAS[name] = Draft202012Validator(schema)
-    error = next(SCHEMAS[name].iter_errors(data), None)
+def check(data, name, schema_version="0.3.1"):
+    key = (schema_version, name)
+    if key not in SCHEMAS:
+        schema = json.loads((ROOT / f"schemas/{schema_version}/{name}.schema.json").read_text(encoding="utf-8"))
+        SCHEMAS[key] = Draft202012Validator(schema)
+    error = next(SCHEMAS[key].iter_errors(data), None)
     require(error is None, f"Schéma {name} non conforme (valeurs privées masquées)")
 
 
-def table(package, path, name):
+def table(package, path, name, schema_version="0.3.1"):
     reader = csv.DictReader(io.StringIO(package.text(path), newline=""))
     require(reader.fieldnames == HEADERS[name], f"En-tête CSV incorrect : {name}")
     result = list(reader)
     for row in result:
-        check(row, name + "-ligne")
+        check(row, name + "-ligne", schema_version)
     return result
 
 
@@ -126,7 +127,7 @@ def validate(source, accept_legacy=False):
         package.close()
 
 
-def validate_package(p, accept_legacy):
+def validate_package(p, accept_legacy, schema_version="0.3.1"):
     warnings = []
     required = ["LISEZ-MOI.md", "Documentation/specification_provisoire.md", "Documentation/categories_documentaires.md"]
     for path in required:
@@ -134,7 +135,7 @@ def validate_package(p, accept_legacy):
     documentation = "\n".join(p.text(path) for path in required)
     if "Aucun sous-dossier documentaire vide n'est créé" in documentation:
         warnings.append("Documentation héritée contradictoire sur les dossiers vides ; appliquer les dix catégories obligatoires.")
-    indexes = {name: table(p, f"Index/{name}.csv", name) for name in HEADERS if name != "inventaire"}
+    indexes = {name: table(p, f"Index/{name}.csv", name, schema_version) for name in HEADERS if name != "inventaire"}
     people, codes, folders, fiches = {}, {}, set(), {}
     edges, inventory_docs = set(), {}
     legacy_count = 0
@@ -151,10 +152,10 @@ def validate_package(p, accept_legacy):
         require(p.text(base + "/LISEZ-MOI.md").strip(), "Résumé individuel vide")
         # Le prototype utilise un objet JSON dans un fichier .yaml (sous-ensemble YAML 1.2).
         fiche = json.loads(p.text(base + "/fiche_individu.yaml"), object_pairs_hook=pairs)
-        if fiche.get("version") == "0.3.0-draft" and accept_legacy:
+        if fiche.get("version") == "0.3.0-draft" and accept_legacy and schema_version == "0.3.1":
             fiche = dict(fiche, version=VERSION)
             legacy_count += 1
-        check(fiche, "individu")
+        check(fiche, "individu", schema_version)
         fiches[gid] = fiche
         trace = fiche["tracabilite"]
         require(trace["identifiant_gedcom"] == gid and fiche["identifiant_permanent_provisoire"] == "GEDCOM:" + gid, "Référence GEDCOM incohérente")
@@ -170,7 +171,7 @@ def validate_package(p, accept_legacy):
             relation_ids = {r["gedcom_id"] for r in relatives}
             require(len(relation_ids) == len(relatives) and relation_ids == ids(row[kind + "_gedcom"]), "Relations fiche/index divergentes ou dupliquées")
             edges.update((gid, kind, other) for other in relation_ids)
-        inv = table(p, base + "/inventaire.csv", "inventaire")
+        inv = table(p, base + "/inventaire.csv", "inventaire", schema_version)
         inv_ids = set()
         for doc in inv:
             did = doc["document_id"]
@@ -238,7 +239,7 @@ def validate_package(p, accept_legacy):
         warnings.append(f"{legacy_count} fiches portent encore 0.3.0-draft ; compatibilité de lecture explicite, aucune réécriture.")
     if any("~" in c for c in set(codes) | alternate):
         warnings.append("Codes historiques avec ~ conservés ; leur sémantique reste à stabiliser.")
-    return {"profil": VERSION, "individus": len(people), "familles": len(family_ids),
+    return {"profil": schema_version + "-draft", "individus": len(people), "familles": len(family_ids),
             "relations": len(edges), "categories": 10 * len(people), "documents": len(inventory_docs),
             "avertissements": warnings}
 

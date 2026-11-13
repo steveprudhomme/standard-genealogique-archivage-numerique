@@ -1,5 +1,13 @@
 # Feuille de route
 
+## Draft 0.4.0 — Nommage des photographies
+
+- [x] Date de prise de vue, description, document_id et variante facultative.
+- [x] Dates incertaines, inconnues et fichiers restaurés/colorisés clairement distingués.
+- [x] Schémas, contrôles d’inventaire, références aux images sources et tests.
+- [x] Exemple technique fictif et guide de migration depuis 0.3.1.
+- [ ] Consultation de la RFC 0003 et retours sur des fonds photographiques.
+
 ## Draft 0.3.1 — Refléter le prototype courant
 
 - [x] Trois fichiers et dix catégories fixes par personne, dossiers individuels à plat.

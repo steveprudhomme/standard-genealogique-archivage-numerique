@@ -1,0 +1,40 @@
+{
+  "standard": "SGAN",
+  "version": "0.4.0-draft",
+  "statut": "prototype_non_officiel",
+  "code_genealogique": "1",
+  "identifiant_permanent_provisoire": "GEDCOM:I1",
+  "identite": {
+    "nom_complet": "Exemple Aline",
+    "nom": "Exemple",
+    "prenoms": "Aline",
+    "sexe_gedcom": null
+  },
+  "evenements": {
+    "naissance": null,
+    "deces": null
+  },
+  "relations": {
+    "parents": [
+      {
+        "code": "11",
+        "gedcom_id": "I2",
+        "nom": "Exemple Basile"
+      }
+    ],
+    "partenaires": [],
+    "enfants": []
+  },
+  "familles_gedcom": {
+    "enfant_de": [
+      "F1"
+    ],
+    "partenaire_dans": []
+  },
+  "tracabilite": {
+    "fichier_source": "exemple-fictif.ged",
+    "identifiant_gedcom": "I1",
+    "methode_numerotation": "reference",
+    "note": "Personne et relations entièrement inventées pour les tests."
+  }
+}

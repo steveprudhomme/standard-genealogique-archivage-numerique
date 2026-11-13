@@ -1,0 +1,308 @@
+{
+  "type": "object",
+  "properties": {
+    "standard": {
+      "const": "SGAN"
+    },
+    "version": {
+      "const": "0.4.0-draft"
+    },
+    "statut": {
+      "const": "prototype_non_officiel"
+    },
+    "code_genealogique": {
+      "type": "string",
+      "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+    },
+    "identifiant_permanent_provisoire": {
+      "type": "string",
+      "pattern": "^GEDCOM:I[0-9]+$"
+    },
+    "identite": {
+      "type": "object",
+      "properties": {
+        "nom_complet": {
+          "type": "string"
+        },
+        "nom": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "prenoms": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sexe_gedcom": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "nom_complet",
+        "nom",
+        "prenoms",
+        "sexe_gedcom"
+      ],
+      "additionalProperties": false
+    },
+    "evenements": {
+      "type": "object",
+      "properties": {
+        "naissance": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "place": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "place",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "deces": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "place": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "place",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "naissance",
+        "deces"
+      ],
+      "additionalProperties": false
+    },
+    "relations": {
+      "type": "object",
+      "properties": {
+        "parents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+              },
+              "gedcom_id": {
+                "type": "string",
+                "pattern": "^I[0-9]+$"
+              },
+              "nom": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "gedcom_id",
+              "nom"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "partenaires": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+              },
+              "gedcom_id": {
+                "type": "string",
+                "pattern": "^I[0-9]+$"
+              },
+              "nom": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "gedcom_id",
+              "nom"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "enfants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+              },
+              "gedcom_id": {
+                "type": "string",
+                "pattern": "^I[0-9]+$"
+              },
+              "nom": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "gedcom_id",
+              "nom"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "parents",
+        "partenaires",
+        "enfants"
+      ],
+      "additionalProperties": false
+    },
+    "familles_gedcom": {
+      "type": "object",
+      "properties": {
+        "enfant_de": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^F[0-9]+$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "partenaire_dans": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^F[0-9]+$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "enfant_de",
+        "partenaire_dans"
+      ],
+      "additionalProperties": false
+    },
+    "tracabilite": {
+      "type": "object",
+      "properties": {
+        "fichier_source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identifiant_gedcom": {
+          "type": "string",
+          "pattern": "^I[0-9]+$"
+        },
+        "methode_numerotation": {
+          "enum": [
+            "reference",
+            "ascendance",
+            "branche_familiale",
+            "descendance",
+            "partenaire",
+            "parent_hors_ascendance",
+            "non_rattache"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fichier_source",
+        "identifiant_gedcom",
+        "methode_numerotation",
+        "note"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "standard",
+    "version",
+    "statut",
+    "code_genealogique",
+    "identifiant_permanent_provisoire",
+    "identite",
+    "evenements",
+    "relations",
+    "familles_gedcom",
+    "tracabilite"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.4.0-draft/schemas/0.4.0/individu.schema.json",
+  "title": "SGAN Draft 0.4.0 — individu",
+  "$comment": "SPDX-License-Identifier: MIT"
+}

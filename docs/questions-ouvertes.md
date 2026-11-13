@@ -1,4 +1,4 @@
-# Questions ouvertes — référence 0.3.1
+# Questions ouvertes — référence 0.4.0
 
 | Sujet | État actuel | Travail attendu |
 |---|---|---|
@@ -10,6 +10,7 @@
 | Familles | Liens parents/enfants/partenaires exportés | Adoption, filiations concurrentes, relations sociales et temporalité |
 | Dates | Valeurs GEDCOM brutes conservées | Calendriers, intervalles et représentation normalisée complémentaire |
 | Documents | Inventaire à onze colonnes ; chemins relatifs au paquet | Éprouver les règles sur des jeux documentaires synthétiques plus riches |
+| Photographies | Date, description, ID stable et variantes définis | Montages multisources, formats complémentaires et registre structuré de dérivation |
 | Archives | Une copie maîtresse, respect des fonds | Dérivés, historique de conservation et droits structurés |
 | Preuves | Notes, sources, inventaires et raisonnement humain | Profil d’assertions optionnel inspiré de la proposition 0.1.0 |
 | GEDCOM/RootsMagic | Paquet issu d’un export observé ; aucun convertisseur livré | Aller-retour synthétique reproductible avec rapport de pertes |

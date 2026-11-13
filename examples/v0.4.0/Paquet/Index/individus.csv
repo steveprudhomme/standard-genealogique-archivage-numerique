@@ -1,0 +1,3 @@
+code_genealogique,id_gedcom,nom,dossier,methode,naissance_date_source,deces_date_source,parents_gedcom,partenaires_gedcom,enfants_gedcom
+1,I1,Exemple Aline,1 Exemple_Aline,reference,,,I2,,
+11,I2,Exemple Basile,11 Exemple_Basile,ascendance,,,,,I1

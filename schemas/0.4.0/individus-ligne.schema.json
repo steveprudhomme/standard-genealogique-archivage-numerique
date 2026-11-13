@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "code_genealogique": {
+      "type": "string",
+      "pattern": "^(?:1[12]*|X(?!000000)[0-9]{6})(?:-U(?:0[1-9]|[1-9][0-9]+)-E(?:0[1-9]|[1-9][0-9]+)|-[DC](?:0[1-9]|[1-9][0-9]+)|-P[12]|~[1-9][0-9]*)*$(?![\\s\\S])"
+    },
+    "id_gedcom": {
+      "type": "string",
+      "pattern": "^I[0-9]+$"
+    },
+    "nom": {
+      "type": "string"
+    },
+    "dossier": {
+      "type": "string"
+    },
+    "methode": {
+      "enum": [
+        "reference",
+        "ascendance",
+        "branche_familiale",
+        "descendance",
+        "partenaire",
+        "parent_hors_ascendance",
+        "non_rattache"
+      ]
+    },
+    "naissance_date_source": {
+      "type": "string"
+    },
+    "deces_date_source": {
+      "type": "string"
+    },
+    "parents_gedcom": {
+      "type": "string"
+    },
+    "partenaires_gedcom": {
+      "type": "string"
+    },
+    "enfants_gedcom": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code_genealogique",
+    "id_gedcom",
+    "nom",
+    "dossier",
+    "methode",
+    "naissance_date_source",
+    "deces_date_source",
+    "parents_gedcom",
+    "partenaires_gedcom",
+    "enfants_gedcom"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/steveprudhomme/standard-genealogique-archivage-numerique/v0.4.0-draft/schemas/0.4.0/individus-ligne.schema.json",
+  "title": "SGAN Draft 0.4.0 — individus-ligne",
+  "$comment": "SPDX-License-Identifier: MIT"
+}

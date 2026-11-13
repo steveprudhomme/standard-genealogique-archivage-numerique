@@ -1,6 +1,6 @@
 # Contribuer à SGAN
 
-**Draft 0.3.1 — projet non officiel.** Les contributions en français sont privilégiées.
+**Draft 0.4.0 — projet non officiel.** Les contributions en français sont privilégiées.
 
 Ouvrir une issue pour un défaut ou une question. Pour un changement d’exigence,
 de code généalogique ou de schéma, suivre le [processus RFC](rfcs/README.md).
@@ -11,7 +11,7 @@ Une correction de langue ou de lien peut être proposée directement par pull re
    et les alternatives envisagées.
 3. Modifier ensemble texte, schéma, exemples et tests lorsque la règle évolue.
 4. Installer `requirements.txt`, exécuter `python tools/generate_schemas.py --check`,
-   `python tools/profile_v031.py --check`
+   `python tools/profile_v031.py --check`, `python tools/profile_v040.py --check`
    et `python -m unittest discover -s tests -v`.
 5. Ajouter une entrée sous « À venir » dans CHANGELOG.md et remplir le modèle de PR.
 
@@ -19,7 +19,9 @@ Les exemples soumis doivent être entièrement inventés. Ne joindre ni GEDCOM r
 ni document familial, ni coordonnées privées, ni captures contenant des personnes réelles.
 Une modification de noms ne suffit pas à anonymiser un arbre.
 
-Conserver les dix catégories des exemples 0.3.1 avec leurs marqueurs `.gitkeep`.
+Conserver les dix catégories des exemples avec leurs marqueurs `.gitkeep`.
+Pour les images 0.4.0, vérifier noms, inventaires et références aux originaux avec
+`python tools/validate_v040.py examples/v0.4.0/Paquet`.
 Ne pas modifier les schémas des éditions publiées pour faire passer un nouveau profil.
 
 En proposant une contribution, vous confirmez disposer des droits nécessaires et
